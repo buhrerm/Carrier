@@ -1,0 +1,36 @@
+# Environment files (contain secrets)
+.env
+*.env.local
+*.env.production
+
+# Application deployments
+apps/
+
+# Data directories
+data/
+
+# SSL certificates
+*.pem
+*.crt
+*.key
+acme.json
+
+# Logs
+*.log
+logs/
+
+# Docker override
+docker-compose.override.yml
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backups
+backups/
+*.backup
+*.tar.gz
