@@ -1,5 +1,5 @@
 #!/bin/bash
-# Docker Compose VPS Platform - One-Command Installation
+# Carrier - One-Command Installation
 
 set -e
 
@@ -14,16 +14,16 @@ log_error() { echo -e "${RED}[ERROR]${NC} $1" >&2; }
 log_warning() { echo -e "${YELLOW}[WARNING]${NC} $1"; }
 
 # Configuration
-INSTALL_DIR="/opt/docker-platform"
+INSTALL_DIR="/opt/carrier"
 MIN_RAM=2048
 MIN_DISK=30
 
 show_banner() {
     cat << "EOF"
-╔════════════════════════════════════════════╗
-║   Docker Compose Multi-App VPS Platform    ║
-║   Portainer + Traefik + GitHub Integration ║
-╚════════════════════════════════════════════╝
+╔═══════════════════════════════════════╗
+║   Carrier                             ║
+║   Multi-App Docker Compose Platform   ║
+╚═══════════════════════════════════════╝
 EOF
 }
 

@@ -1,6 +1,6 @@
-# Docker Compose Multi-App VPS Platform
+# Carrier
 
-**Purpose**: Deploy and manage multiple docker-compose applications on a single VPS through Portainer's web UI with GitHub auto-deployment.
+Deploy and manage multiple docker-compose applications on a single VPS through Portainer's web UI with GitHub auto-deployment.
 
 ## 🎯 What This Does
 
@@ -18,15 +18,15 @@
 ssh root@your-vps-ip
 
 # Clone and install
-git clone https://github.com/yourusername/docker-compose-vps.git
-cd docker-compose-vps
+git clone https://github.com/yourusername/carrier.git
+cd carrier
 sudo ./install.sh
 
 # Configure
-nano /opt/docker-platform/.env
+nano /opt/carrier/.env
 
 # Restart services
-cd /opt/docker-platform
+cd /opt/carrier
 docker compose restart
 ```
 
@@ -63,7 +63,7 @@ Your VPS
 
 ### 1. Domain Setup
 
-Edit `/opt/docker-platform/.env`:
+Edit `/opt/carrier/.env`:
 ```env
 DOMAIN=yourdomain.com
 CLOUDFLARE_EMAIL=your-email@example.com
@@ -114,7 +114,7 @@ A    yourdomain.com       →    YOUR_VPS_IP
 ### Method 3: Manual Deployment
 
 ```bash
-cd /opt/docker-platform/apps/myapp
+cd /opt/carrier/apps/myapp
 git clone https://github.com/you/myapp.git .
 docker compose up -d
 ```
@@ -190,20 +190,20 @@ services:
 
 ### Update an Application
 ```bash
-cd /opt/docker-platform/apps/myapp
+cd /opt/carrier/apps/myapp
 git pull
 docker compose up -d --build
 ```
 
 ### Stop an Application
 ```bash
-cd /opt/docker-platform/apps/myapp
+cd /opt/carrier/apps/myapp
 docker compose down
 ```
 
 ### Remove an Application
 ```bash
-cd /opt/docker-platform/apps/myapp
+cd /opt/carrier/apps/myapp
 docker compose down -v  # Also removes volumes
 cd ..
 rm -rf myapp
@@ -256,7 +256,7 @@ BACKUP_DIR="/backups/$(date +%Y%m%d)"
 mkdir -p $BACKUP_DIR
 
 # Backup all app data
-for app in /opt/docker-platform/apps/*; do
+for app in /opt/carrier/apps/*; do
   app_name=$(basename $app)
   docker compose -f $app/docker-compose.yml down
   tar -czf $BACKUP_DIR/${app_name}.tar.gz $app
@@ -371,13 +371,10 @@ services:
 
 Ready-to-use templates in `/templates/`:
 - `fullstack-node/` - Node.js + React + PostgreSQL + Redis
-- `fullstack-python/` - Python + Vue + PostgreSQL + Celery
-- `microservices/` - Multi-service architecture template
 
 ## 🆘 Support
 
-- Check `CLAUDE.md` for AI assistant guidelines
-- Review `docs/` folder for detailed guides
+- Check `CLAUDE.md` for project guidelines
 - GitHub Issues for bug reports
 
 ## 📄 License

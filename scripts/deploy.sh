@@ -4,7 +4,7 @@
 
 set -e
 
-APPS_DIR="/opt/docker-platform/apps"
+APPS_DIR="/opt/carrier/apps"
 REPO_NAME="${1}"
 BRANCH="${2}"
 

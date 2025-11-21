@@ -1,8 +1,8 @@
-# CLAUDE.md - AI Assistant Guidelines
+# CLAUDE.md - Carrier
 
 ## 🎯 PROJECT GOAL
 
-**This platform has ONE specific purpose:**
+**Carrier has ONE specific purpose:**
 > Deploy and manage multiple applications on a VPS, where each application consists of multiple Docker Compose services (frontend, backend, database). All management happens through Portainer's web UI with GitHub integration for automatic deployments.
 
 ### Core Requirements
@@ -26,7 +26,7 @@
 ## 📁 Project Structure
 
 ```
-docker-compose-vps/
+carrier/
 ├── install.sh              # One-command installation
 ├── config/                 # Platform configuration
 │   ├── traefik/           # Reverse proxy config
@@ -142,7 +142,7 @@ Every script should:
 set -e
 
 # Load configuration
-source /opt/docker-platform/config/env.sh
+source /opt/carrier/config/env.sh
 
 # Single purpose
 main() {
